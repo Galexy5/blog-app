@@ -16,4 +16,6 @@ flash.notice = "Tag '#{@tag.name}' Deleted!"
 redirect_to tags_path
 end
 
+before_action :require_login, only: [:destroy]
+
 end
