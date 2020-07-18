@@ -12,9 +12,9 @@ class AuthorsController < ApplicationController
   def show
   end
 
-  before_action :require_login, except: [:new, :create]
+   before_action :require_login, except: [:new, :create]
 
-  before_action :zero_authors_or_authenticated, only: [:new, :create]
+  # before_action :zero_authors_or_authenticated, only: [:new, :create]
 
   def zero_authors_or_authenticated
     unless Author.count == 0 || current_user
